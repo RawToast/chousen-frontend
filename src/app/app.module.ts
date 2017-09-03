@@ -13,6 +13,7 @@ import { GameService } from './game/game.service';
 import { SharingService } from './game/sharing.service';
 
 import { HttpModule, Http } from '@angular/http';
+import { EquipmentComponent } from './game/equipment';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpModule, Http } from '@angular/http';
     LandingComponent,
 
     GameComponent,
-    PlayerComponent
+    PlayerComponent,
+    EquipmentComponent
   ],
   imports: [
     AppRoutingModule,
