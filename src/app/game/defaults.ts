@@ -1,5 +1,5 @@
 
-import { GameResponse } from './game.service';
+import { GameResponse } from './gameresponse';
 
 export class Defaults {
 

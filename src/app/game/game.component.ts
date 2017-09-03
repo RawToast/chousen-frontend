@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { GameService, GameResponse } from './game.service';
-import { SharingService } from './sharing.service';
+import { GameResponse } from './gameresponse';
+import { GameService } from './sharing.service';
 
 import 'rxjs/add/operator/switchMap';
 import { Defaults } from './defaults';
@@ -12,9 +12,11 @@ import { Defaults } from './defaults';
     selector: 'chousen-game',
     template: `
 
-    <h1>{{game.uuid}}</h1>
-
     <chousen-player></chousen-player>
+
+    <chousen-enemy></chousen-enemy>
+
+    <chousen-messages></chousen-messages>
     `
 })
 
@@ -22,7 +24,7 @@ export class GameComponent implements OnInit {
 
     game: GameResponse = new Defaults().EMPTY_GAME;
 
-    constructor(private gameService: SharingService,
+    constructor(private gameService: GameService,
         private route: ActivatedRoute, private location: Location) { }
 
     ngOnInit() {

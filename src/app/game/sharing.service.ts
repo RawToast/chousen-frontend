@@ -4,12 +4,12 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
-import { GameResponse } from './game.service';
+import { GameResponse } from './gameresponse';
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
-export class SharingService {
+export class GameService {
 
     constructor(private http: Http) { }
 

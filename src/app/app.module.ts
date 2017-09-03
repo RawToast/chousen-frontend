@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { CreateGameComponent } from './landing/create';
 import { PatchNotesComponent } from './landing/notes';
 import { LandingComponent } from './landing/landing';
-import { GameComponent } from './game/game';
+import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './game/player';
-import { GameService } from './game/game.service';
-import { SharingService } from './game/sharing.service';
+import { GameService } from './game/sharing.service';
 
 import { HttpModule, Http } from '@angular/http';
 import { EquipmentComponent } from './game/equipment';
+import { EnemyComponent } from './game/enemy';
+import { MessagesComponent } from './game/messages';
 
 @NgModule({
   declarations: [
@@ -24,14 +25,16 @@ import { EquipmentComponent } from './game/equipment';
 
     GameComponent,
     PlayerComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    EnemyComponent,
+    MessagesComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpModule
   ],
-  providers: [GameService, SharingService],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

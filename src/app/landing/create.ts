@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { GameService } from '../game/game.service';
+import { GameService } from '../game/sharing.service';
 
 @Component({
     selector: 'chousen-create',

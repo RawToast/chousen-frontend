@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player, GameService, GameResponse } from './game.service';
-import { SharingService } from './sharing.service';
+import { Player, GameResponse } from './gameresponse';
+import { GameService } from './sharing.service';
 import { Defaults } from './defaults';
 
 @Component({
@@ -10,7 +10,7 @@ import { Defaults } from './defaults';
 
 export class PlayerComponent implements OnInit {
 
-    constructor(private gameService: SharingService) {}
+    constructor(private gameService: GameService) {}
 
     player: Player = new Defaults().EMPTY_GAME.player;
 

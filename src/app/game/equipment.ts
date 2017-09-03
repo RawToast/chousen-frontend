@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player, GameService, GameResponse, Equipment } from './game.service';
-import { SharingService } from './sharing.service';
+import { Player, GameResponse, Equipment } from './gameresponse';
+import { GameService } from './sharing.service';
 import { Defaults } from './defaults';
 
 @Component({
@@ -10,7 +10,7 @@ import { Defaults } from './defaults';
 
 export class EquipmentComponent implements OnInit {
 
-    constructor(private gameService: SharingService) {}
+    constructor(private gameService: GameService) {}
 
     equipment: Equipment = new Defaults().EMPTY_GAME.player.equipment;
 
@@ -25,13 +25,13 @@ export class EquipmentComponent implements OnInit {
     weapon() {
         if (typeof this.equipment.weapon !== 'undefined') {
             return '';
-        } else { return 'Weapon: {{this.equipment.weapon}}'; }
+        } else { return 'Weapon: ' + this.equipment.weapon; }
     }
 
     armour() {
         if (typeof this.equipment.armour !== 'undefined') {
             return '';
-        } else { return 'Weapon: ' + this.equipment.armour; }
+        } else { return 'Armour: ' + this.equipment.armour; }
     }
 
 }

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CreateGameComponent } from './landing/create';
 import { PatchNotesComponent } from './landing/notes';
 import { LandingComponent } from './landing/landing';
-import { GameComponent } from './game/game';
+import { GameComponent } from './game/game.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
