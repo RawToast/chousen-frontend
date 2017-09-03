@@ -17,6 +17,8 @@ import { Defaults } from './defaults';
     <chousen-enemy></chousen-enemy>
 
     <chousen-messages></chousen-messages>
+
+    <chousen-input></chousen-input>
     `
 })
 

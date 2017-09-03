@@ -15,6 +15,7 @@ import { HttpModule, Http } from '@angular/http';
 import { EquipmentComponent } from './game/equipment';
 import { EnemyComponent } from './game/enemy';
 import { MessagesComponent } from './game/messages';
+import { InputComponent } from './game/input';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { MessagesComponent } from './game/messages';
     PlayerComponent,
     EquipmentComponent,
     EnemyComponent,
-    MessagesComponent
+    MessagesComponent,
+
+    InputComponent
   ],
   imports: [
     AppRoutingModule,

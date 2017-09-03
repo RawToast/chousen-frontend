@@ -82,6 +82,20 @@ export class GameService {
           .catch(this.handleError);
     }
 
+    makeRequest(uri: string, body: any): Promise<GameResponse> {
+        const url = `${this.rootApiUrl}/${uri}`;
+        return this.http
+          .post(url, JSON.stringify(body))
+          .toPromise()
+          .then(response => {
+            const result = response.json() as GameResponse;
+            return result;
+        } )
+          .catch(this.handleError);
+    }
+
+
+
     private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
       return Promise.reject(error.message || error);
