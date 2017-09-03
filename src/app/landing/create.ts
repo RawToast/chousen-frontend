@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { GameService } from '../game/sharing.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'chousen-create',
@@ -19,7 +20,7 @@ import { GameService } from '../game/sharing.service';
 })
 
 export class CreateGameComponent implements OnInit {
-    constructor(private gameService: GameService) { }
+    constructor(private gameService: GameService, private router: Router) { }
 
     ngOnInit() { }
 
@@ -29,15 +30,9 @@ export class CreateGameComponent implements OnInit {
             console.log(event.target.value);
 
             this.gameService.create(event.target.value)
-                .then(gr => console.log('Made ' + gr.uuid));
-            // var selValue = $('input[name=charc]:checked').val();
-            // //Do Stuff, submit, etc..
-            // var n = jQuery("#namebox").val();
-            // var uri = "/game/" + n + "/start/" + selValue;
-            // $(this).attr("disabled", "");
-            // jQuery.post(uri, function(result) {
-            //     window.location.replace(result.uuid)
-            // });
+                .then(gr => { console.log('Made ' + gr.uuid);
+                this.router.navigate(['game', gr.uuid]);
+            });
         }
     }
 }
