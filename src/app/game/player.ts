@@ -14,6 +14,10 @@ export class PlayerComponent implements OnInit {
 
     player: Player = new Defaults().EMPTY_GAME.player;
 
+    statusMsg: string = this.player.status
+        .map(s => s.effect)
+        .reduce((l, r) => l + ', ' + r);
+
     ngOnInit() {
         this.gameService.getData1().subscribe(gs => {
             if (typeof gs !== 'undefined') {

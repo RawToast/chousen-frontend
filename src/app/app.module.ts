@@ -16,6 +16,7 @@ import { EquipmentComponent } from './game/equipment';
 import { EnemyComponent } from './game/enemy';
 import { MessagesComponent } from './game/messages';
 import { InputComponent } from './game/input';
+import { CardsComponent } from './game/cards';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { InputComponent } from './game/input';
     EquipmentComponent,
     EnemyComponent,
     MessagesComponent,
+    CardsComponent,
 
     InputComponent
   ],

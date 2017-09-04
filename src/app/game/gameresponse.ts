@@ -20,6 +20,13 @@ export interface Equipment {
     armour: string;
 }
 
+export interface Status {
+    effect: string;
+    description: string;
+    turns: number;
+    amount: number;
+}
+
 export interface Player {
     name: string;
     className: string;
@@ -27,13 +34,15 @@ export interface Player {
     experience: Experience;
     equipment: Equipment;
     position: number;
-    status: any[];
+    status: Status[];
 }
 
-export interface Hand {
+export interface Card {
     name: string;
     description: string;
+    charges?: string;
     playable: boolean;
+    action: Action;
 }
 
 export interface Deck {
@@ -52,10 +61,7 @@ export interface Passive {
 export interface EquippedCards { }
 
 export interface Cards {
-    hand: Hand[];
-    deck: Deck[];
-    discard: any[];
-    passive: Passive[];
+    hand: Card[];
     equippedCards: EquippedCards;
 }
 

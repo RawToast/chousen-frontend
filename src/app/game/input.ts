@@ -19,7 +19,7 @@ import { Location } from '@angular/common';
         </button>
         <ul *ngIf="a.request.length > 1" class="dropdown-menu">
             <li *ngFor="let t of a.request" (click)="actionReq(a.uri, t)">
-                <a href="#"> {{ t.description }} </a>
+                <a> {{ t.description }} </a>
             </li>
         </ul>
     </div>

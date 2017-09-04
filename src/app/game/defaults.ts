@@ -27,13 +27,46 @@ export class Defaults {
                 'armour': null
             },
             'position': 120,
-            'status': []
+            'status': [
+                {
+                    'effect': 'Regen',
+                    'description': 'Regenerate health',
+                    'turns': 5,
+                    'amount': 5
+                }
+            ]
         },
         'cards': {
-            'hand': [],
-            'deck': [],
-            'discard': [],
-            'passive': [],
+            'hand': [
+                {
+                    'name': 'Quick Attack',
+                    'description': 'Attack with reduced movement penalty',
+                    'charges': '(4/4)',
+                    'playable': true,
+                    'action': {
+                        'name': 'Quick Attack',
+                        'description': 'Attack with reduced movement penalty',
+                        'uri': 'game/3c086ea5-5eda-4f31-bd09-21603bfed816/single/b1cb2f89-cc7f-4fa3-86be-2f100c780920',
+                        'request': []
+                    }
+                },
+                {
+                    'name': 'Essence of Dexterity ',
+                    'description': 'Immediately increases Dexterity, only 1 essence may be played per turn',
+                    'playable': true,
+                    'action': {
+                        'name': 'Essence of Dexterity ',
+                        'description': 'Immediately increases Dexterity, only 1 essence may be played per turn',
+                        'uri': 'game/3c086ea5-5eda-4f31-bd09-21603bfed816/self/b9595c28-8435-4d94-8102-5370e93c51bb',
+                        'request': [
+                            {
+                                'description': 'Essence of Dexterity ',
+                                'action': 'EssenceOfDexterity'
+                            }
+                        ]
+                    }
+                },
+            ],
             'equippedCards': {
                 'weapon': null,
                 'armour': null,

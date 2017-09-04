@@ -19,6 +19,8 @@ import { Defaults } from './defaults';
     <chousen-messages></chousen-messages>
 
     <chousen-input></chousen-input>
+
+    <chousen-cards></chousen-cards>
     `
 })
 
