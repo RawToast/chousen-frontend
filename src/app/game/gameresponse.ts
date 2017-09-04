@@ -15,7 +15,10 @@ export interface Experience {
     level: number;
 }
 
-export interface Equipment { }
+export interface Equipment {
+    weapon: string;
+    armour: string;
+}
 
 export interface Player {
     name: string;
@@ -46,7 +49,7 @@ export interface Passive {
     playable: boolean;
 }
 
-export interface EquippedCards {}
+export interface EquippedCards { }
 
 export interface Cards {
     hand: Hand[];
@@ -56,20 +59,10 @@ export interface Cards {
     equippedCards: EquippedCards;
 }
 
-export interface Stats2 {
-    maxHp: number;
-    currentHp: number;
-    strength: number;
-    dexterity: number;
-    intellect: number;
-    vitality: number;
-    speed: number;
-}
-
 export interface Enemy {
     name: string;
     id: string;
-    stats: Stats2;
+    stats: Stats;
     position: number;
     status: any[];
 }
@@ -78,16 +71,13 @@ export interface CurrentEncounter {
     enemies: Enemy[];
 }
 
-export interface CampfireActionRequest {
-    action: string;
-    cardId: string;
-}
-
-export interface BlockRequest { }
-
 export interface Request {
-    CampfireActionRequest: CampfireActionRequest;
-    BlockRequest: BlockRequest;
+    action?: string;
+    cardId?: string;
+    targetId?: string;
+    targetIds?: string[];
+    id?: string;
+    description?: string;
 }
 
 export interface Action {

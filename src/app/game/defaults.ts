@@ -43,6 +43,36 @@ export class Defaults {
         'currentEncounter': {
             'enemies': []
         },
+        'actions': [
+            {
+                'name': 'Attack Sloth',
+                'description': 'Use a basic attack on Sloth',
+                'uri': 'game/e02c84a3-8d95-4df2-b8d0-56f065ebc0ba/attack',
+                'request': [
+                    {
+                        'targetId': '7daa7e57-ef61-4cc9-95d5-13fd773d75c9'
+                    }
+                ]
+            },
+            {
+                'name': 'Attack Slime',
+                'description': 'Use a basic attack on Slime',
+                'uri': 'game/e02c84a3-8d95-4df2-b8d0-56f065ebc0ba/attack',
+                'request': [
+                    {
+                        'targetId': '1254c142-ec4a-475e-a9f8-1c63f7b28b5b'
+                    }
+                ]
+            },
+            {
+                'name': 'Block',
+                'description': 'Block for one turn, greatly increasing defense',
+                'uri': 'game/e02c84a3-8d95-4df2-b8d0-56f065ebc0ba/block',
+                'request': [
+                    {}
+                ]
+            }
+        ],
         'messages': [
             {
                 'text': 'the game has not loaded'

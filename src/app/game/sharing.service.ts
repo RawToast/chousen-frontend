@@ -62,8 +62,8 @@ export class GameService {
           .catch(this.handleError);
     }
 
-    create(name: string): Promise<GameResponse> {
-        const url = `${this.rootApiUrl}/game/${name}/start`;
+    create(name: string, choice: number): Promise<GameResponse> {
+        const url = `${this.rootApiUrl}/game/${name}/start/${choice}`;
         return this.http
           .post(url, JSON.stringify({}))
           .toPromise()
