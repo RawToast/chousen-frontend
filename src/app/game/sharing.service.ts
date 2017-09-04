@@ -50,14 +50,6 @@ export class GameService {
         return this.data2.asObservable();
     }
 
-    // refresh(id: string) {
-    //     console.log('Refreshing ' + id);
-    //     const url = `${this.rootApiUrl}/game/${id}`;
-    //     this.http.get(url).toPromise().then(data => {
-    //         const result = data.json() as GameResponse;
-    //         this.data1.next(result);
-    //     });
-    // }
 
     getGame(id: string): Promise<GameResponse> {
         const url = `${this.rootApiUrl}/game/${id}`;

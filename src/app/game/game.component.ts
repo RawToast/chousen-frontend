@@ -32,7 +32,6 @@ export class GameComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe((params: ParamMap) => {
             const gid = params['id'];
-            console.log('gid' + gid);
             this.gameService.awaitData(gid);
             this.gameService.getData1().subscribe(gs => {
                 if (typeof gs !== 'undefined') {

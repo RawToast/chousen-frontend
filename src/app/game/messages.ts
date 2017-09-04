@@ -24,7 +24,6 @@ export class MessagesComponent implements OnInit {
     ngOnInit() {
         this.gameService.getData1().subscribe(gs => {
             if (typeof gs !== 'undefined') {
-                console.log('prev size ' + this.prevMessages.length );
                 const newMsgs = gs.messages
                     .filter(m => this.prevMessages.findIndex(msg => msg.text === m.text) === -1);
 

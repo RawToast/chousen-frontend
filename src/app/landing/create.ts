@@ -27,10 +27,9 @@ export class CreateGameComponent implements OnInit {
     onKey(event: any) {
         if (event.which === 13) {
             event.preventDefault();
-            console.log(event.target.value);
 
             this.gameService.create(event.target.value)
-                .then(gr => { console.log('Made ' + gr.uuid);
+                .then(gr => {
                 this.router.navigate(['game', gr.uuid]);
             });
         }

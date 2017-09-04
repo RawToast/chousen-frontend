@@ -39,9 +39,7 @@ export class InputComponent implements OnInit {
         }
 
     block() {
-        console.log('blocking');
         this.gameService.makeRequest(`game/${this.gameId}/block`, {})
             .then(gr => this.gameService.refresh2(this.gameId));
-        console.log('blocked');
     }
 }
