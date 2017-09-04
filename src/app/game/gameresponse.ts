@@ -70,7 +70,7 @@ export interface Enemy {
     id: string;
     stats: Stats;
     position: number;
-    status: any[];
+    status: Status[];
 }
 
 export interface CurrentEncounter {

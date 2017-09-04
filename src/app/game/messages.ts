@@ -21,16 +21,16 @@ export class MessagesComponent implements OnInit {
     messages: Message[] = new Defaults().EMPTY_GAME.messages;
     prevMessages: Message[] = new Defaults().EMPTY_GAME.messages;
 
+    prevSize = 0;
+
     ngOnInit() {
         this.gameService.getData1().subscribe(gs => {
             if (typeof gs !== 'undefined') {
                 const newMsgs = gs.messages
                     .filter(m => this.prevMessages.findIndex(msg => msg.text === m.text) === -1);
 
-                if (newMsgs.length !== 0) {
-                    this.prevMessages = gs.messages;
-                    this.messages = newMsgs;
-                }
+                this.messages = gs.messages.slice(this.prevSize, gs.messages.length);
+                this.prevSize = gs.messages.length;
             }
         });
     }

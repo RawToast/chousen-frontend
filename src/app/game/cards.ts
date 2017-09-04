@@ -7,22 +7,17 @@ import { Location } from '@angular/common';
 
 @Component({
     selector: 'chousen-cards',
-    // template: `
-    // <div>
-    //     <button *ngFor="let a of hand"
-    //          class="btn btn-blk btn-default"> {{ a.name }} </button>
-    // </div>`
     template: `
     <div>
         <div class="btn-group" role="group" *ngFor="let a of hand">
             <!-- Single target -->
             <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
-                class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} </button>
+                class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
 
             <!-- Multi target -->
             <button *ngIf="a.action.request.length > 1" type="button" class="btn btn-default btn-camp2 dropdown-toggle"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="{{ a.description }}">
-                {{ a.name }}
+                {{ a.name }} {{ a.charges }}
                 <span class="caret"></span>
             </button>
             <ul *ngIf="a.action.request.length > 1" class="dropdown-menu">
@@ -34,8 +29,7 @@ import { Location } from '@angular/common';
     </div>
     `
 })
-// <button *ngFor="let a of actions" (click)="actionReq(a.uri, a.request[0])"
-//          class="btn btn-blk btn-default"> {{ a.name }} </button>
+
 
 export class CardsComponent implements OnInit {
     constructor(private gameService: GameService, private route: ActivatedRoute,
