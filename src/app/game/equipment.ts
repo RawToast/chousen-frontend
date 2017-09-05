@@ -25,13 +25,13 @@ export class EquipmentComponent implements OnInit {
     weapon() {
         if (typeof this.equipment.weapon === 'undefined') {
             return '';
-        } else { return 'Weapon: ' + this.equipment.weapon; }
+        } else { return 'Weapon: ' + this.equipment.weapon.name; }
     }
 
     armour() {
         if (typeof this.equipment.armour === 'undefined') {
             return '';
-        } else { return 'Armour: ' + this.equipment.armour; }
+        } else { return 'Armour: ' + this.equipment.armour.name; }
     }
 
 }
