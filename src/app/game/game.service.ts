@@ -7,14 +7,14 @@ import 'rxjs/add/observable/fromPromise';
 import { GameResponse } from './gameresponse';
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import * as Config from '../config';
 
 @Injectable()
 export class GameService {
 
     constructor(private http: Http) { }
-
     // 88107f56-54c4-4e0d-8e1c-41532b0848be
-    private rootApiUrl = 'http://localhost:8080';  // URL to web api
+    private rootApiUrl = Config.chousenUri();  // URL to web api
 
     private headers = new Headers({'Content-Type': 'application/json'});
     private fetching: boolean;

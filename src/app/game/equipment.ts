@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player, GameResponse, Equipment } from './gameresponse';
-import { GameService } from './sharing.service';
+import { GameService } from './game.service';
 import { Defaults } from './defaults';
 
 @Component({
@@ -23,15 +23,15 @@ export class EquipmentComponent implements OnInit {
     }
 
     weapon() {
-        if (typeof this.equipment.weapon !== 'undefined') {
+        if (typeof this.equipment.weapon === 'undefined') {
             return '';
-        } else { return 'Weapon: ' + this.equipment.weapon; }
+        } else { return 'Weapon: ' + this.equipment.weapon.name; }
     }
 
     armour() {
-        if (typeof this.equipment.armour !== 'undefined') {
+        if (typeof this.equipment.armour === 'undefined') {
             return '';
-        } else { return 'Armour: ' + this.equipment.armour; }
+        } else { return 'Armour: ' + this.equipment.armour.name; }
     }
 
 }

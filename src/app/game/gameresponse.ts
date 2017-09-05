@@ -16,8 +16,23 @@ export interface Experience {
 }
 
 export interface Equipment {
-    weapon: string;
-    armour: string;
+    weapon?: Weapon;
+    armour?: Armour;
+}
+
+export interface Weapon {
+    cardId: string;
+    name: string;
+    dmg: number;
+    requirements: any;
+    effects: any[];
+}
+
+export interface Armour {
+    cardId: string;
+    name: string;
+    defense: number;
+    requirements: any;
 }
 
 export interface Status {

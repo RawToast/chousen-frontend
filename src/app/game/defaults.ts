@@ -23,7 +23,13 @@ export class Defaults {
                 'level': 1
             },
             'equipment': {
-                'weapon': null,
+                'weapon': {
+                    'cardId': '20ffb469-bd25-4b0e-955e-0381ad8c9c2e',
+                    'name': 'Short Sword',
+                    'dmg': 6,
+                    'requirements': {},
+                    'effects': []
+                },
                 'armour': null
             },
             'position': 120,
