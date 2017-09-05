@@ -32,8 +32,10 @@ export class EnemyComponent implements OnInit {
 
         statusMessage(e: Enemy) {
             const effects = e.status.map(s => s.effect);
+
             if (effects.length > 0) {
-                return 'ST: ' + effects.reduce((l, r) => l + ', ' + r);
+                return 'ST: ' + effects.filter((ef, i) => effects.indexOf(ef) === i)
+                                        .reduce((l, r) => l + ', ' + r);
             } else {
                 return '';
             }

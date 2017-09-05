@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
                     <input type="radio" name="charc" value="3" (click)="classChoice(3)"> Rogue
                     <input type="radio" name="charc" value="4" (click)="classChoice(4)"> Trickster
                     <input type="radio" name="charc" value="5" (click)="classChoice(5)"> Mage
-                    <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Chieftan
+                    <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Wizard
                 </fieldset>`,
 })
 

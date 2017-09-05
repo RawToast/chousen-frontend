@@ -26,13 +26,13 @@ export class MessagesComponent implements OnInit {
     ngOnInit() {
         this.gameService.getData1().subscribe(gs => {
             if (typeof gs !== 'undefined') {
-                const newMsgs = gs.messages
-                    .filter(m => this.prevMessages.findIndex(msg => msg.text === m.text) === -1);
+                // const newMsgs = gs.messages
+                //     .filter(m => this.prevMessages.findIndex(msg => msg.text === m.text) === -1);
 
-                const msgs = gs.messages.slice(this.prevSize, gs.messages.length);
-                this.prevSize = gs.messages.length;
+                // const msgs = gs.messages.slice(this.prevSize, gs.messages.length);
+                // this.prevSize = gs.messages.length;
 
-                this.messages = msgs;
+                this.messages = gs.messages;
             }
         });
     }
