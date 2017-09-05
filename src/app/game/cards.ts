@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from './sharing.service';
+import { GameService } from './game.service';
 import { Defaults } from './defaults';
 import { Message, Action, Card } from './gameresponse';
 import { ActivatedRoute, ParamMap } from '@angular/router';

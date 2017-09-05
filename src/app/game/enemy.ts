@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from './sharing.service';
+import { GameService } from './game.service';
 import { Player, Enemy } from './gameresponse';
 import { Defaults } from './defaults';
 

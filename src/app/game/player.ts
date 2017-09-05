@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player, GameResponse } from './gameresponse';
-import { GameService } from './sharing.service';
+import { GameService } from './game.service';
 import { Defaults } from './defaults';
 
 @Component({

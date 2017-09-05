@@ -9,7 +9,7 @@ import { PatchNotesComponent } from './landing/notes';
 import { LandingComponent } from './landing/landing';
 import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './game/player';
-import { GameService } from './game/sharing.service';
+import { GameService } from './game/game.service';
 
 import { HttpModule, Http } from '@angular/http';
 import { EquipmentComponent } from './game/equipment';

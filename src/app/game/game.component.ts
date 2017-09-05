@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { GameResponse } from './gameresponse';
-import { GameService } from './sharing.service';
+import { GameService } from './game.service';
 
 import 'rxjs/add/operator/switchMap';
 import { Defaults } from './defaults';
