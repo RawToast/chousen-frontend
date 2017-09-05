@@ -6,16 +6,14 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'chousen-create',
     template: `<input id ="namebox" type="text" class="form-control" placeholder="Character Name" (keyup)="onKey($event)">
-
                 <br>
-                <fieldset class="form-group">
-                    <input type="radio" name="charc" value="1" (click)="classChoice(1)" checked> Fighter
-                    <input type="radio" name="charc" value="2" (click)="classChoice(2)"> Berserker
+                <fieldset>
+                    <input class="radio" type="radio" name="charc" value="1" (click)="classChoice(1)" checked> Fighter
+                    <input class="radio" type="radio" name="charc" value="2" (click)="classChoice(2)"> Berserker
                     <input type="radio" name="charc" value="3" (click)="classChoice(3)"> Rogue
                     <input type="radio" name="charc" value="4" (click)="classChoice(4)"> Trickster
                     <input type="radio" name="charc" value="5" (click)="classChoice(5)"> Mage
                     <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Chieftan
-
                 </fieldset>`,
 })
 

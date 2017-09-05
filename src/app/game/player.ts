@@ -34,4 +34,10 @@ export class PlayerComponent implements OnInit {
         }
     }
 
+    hpClass() {
+        if (this.player.stats.currentHp < 30) {
+            return true;
+        } return false;
+    }
+
 }

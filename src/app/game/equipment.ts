@@ -5,7 +5,10 @@ import { Defaults } from './defaults';
 
 @Component({
     selector: 'chousen-equipment',
-    templateUrl: `./equipment.html`
+    template: `<div class="row" style="padding: 0.5em 0px">
+                <div *ngIf="equipment.weapon !== null" class="col-sm-4">{{ weapon() }}</div>
+                <div class="col-sm-4">{{ armour() }}</div>
+            </div>`
 })
 
 export class EquipmentComponent implements OnInit {
@@ -23,13 +26,17 @@ export class EquipmentComponent implements OnInit {
     }
 
     weapon() {
-        if (typeof this.equipment.weapon === 'undefined' || this.equipment.weapon.name !== 'null') {
+        if (typeof this.equipment.weapon === 'undefined') {
             return '';
-        } else { return 'Weapon: ' + this.equipment.weapon.name; }
+        } else if (this.equipment.weapon === null) {
+            return '';
+        }{ return 'Weapon: ' + this.equipment.weapon.name; }
     }
 
     armour() {
-        if (typeof this.equipment.armour === 'undefined' || this.equipment.weapon.name !== 'null') {
+        if (typeof this.equipment.armour === 'undefined') {
+            return '';
+        } else if (this.equipment.armour === null) {
             return '';
         } else { return 'Armour: ' + this.equipment.armour.name; }
     }

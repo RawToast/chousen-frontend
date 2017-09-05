@@ -22,8 +22,9 @@ import { Location } from '@angular/common';
                 {{ a.name }} {{ a.charges }}
                 <span class="caret"></span>
             </button>
-            <div *ngIf="a.action.request.length > 1" class="dropdown-menu" attr.aria-labelledby="{{a.id}}">
-                <a class="dropdown-item" style="white-space: normal"
+            <div *ngIf="a.action.request.length > 1" class="dropdown-menu" style="background-color: #1F1F1F"
+                attr.aria-labelledby="{{a.id}}">
+                <a class="dropdown-item c-dropdown" style="white-space: normal; background-color: #202020"
                 *ngFor="let t of a.action.request" (click)="actionReq(a.action.uri, t)">
                      {{ t.description }}
                 </a>

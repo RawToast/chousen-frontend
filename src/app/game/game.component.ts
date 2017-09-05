@@ -11,7 +11,6 @@ import { Defaults } from './defaults';
 @Component({
     selector: 'chousen-game',
     template: `
-
     <chousen-player></chousen-player>
 
     <chousen-enemy></chousen-enemy>
@@ -21,7 +20,8 @@ import { Defaults } from './defaults';
     <chousen-input></chousen-input>
 
     <chousen-cards></chousen-cards>
-    `
+    `,
+    styleUrls: ['./game.component.css']
 })
 
 export class GameComponent implements OnInit {

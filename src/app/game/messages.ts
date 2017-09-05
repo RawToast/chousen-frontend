@@ -8,7 +8,7 @@ import { Defaults } from './defaults';
     template: `
     <div id="gameMessagesRow" class="row" style="padding: 8px 0px">
         <div id="gameMessagesOffSet" class="col-sm-10">
-            <textarea id="gameMessagesText" class="form-control noresize" style="resize: none" rows="15" data-role="none">
+            <textarea id="gameMessagesText" class="form-control noresize c-messages" rows="12" data-role="none">
 {{getMessages()}}
             </textarea>
         </div>
@@ -29,8 +29,10 @@ export class MessagesComponent implements OnInit {
                 const newMsgs = gs.messages
                     .filter(m => this.prevMessages.findIndex(msg => msg.text === m.text) === -1);
 
-                this.messages = gs.messages.slice(this.prevSize, gs.messages.length);
+                const msgs = gs.messages.slice(this.prevSize, gs.messages.length);
                 this.prevSize = gs.messages.length;
+
+                this.messages = msgs;
             }
         });
     }

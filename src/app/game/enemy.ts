@@ -6,17 +6,11 @@ import { Defaults } from './defaults';
 @Component({
     selector: 'chousen-enemy',
     template: `
-    <div id="enemySheet" class="row">
-        <div class="row col-sm-12" style="padding: 2px 0px" *ngFor="let e of enemies">
-            <div class="col-sm-2">{{e.name}}</div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">HP {{e.stats.currentHp}}/{{e.stats.maxHp}}</div>
-            <div class="col-sm-2">{{ statusMessage(e) }}</div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">{{e.position}}</div>
-        </div>
-        <div class="row col-sm-12" style="padding: 2px 0px" *ngFor="let num of additionalLines">
-            <div class="col-sm-2"  style="color:#FFFFFF">s</div>
+    <div id="enemySheet" class="row enemySheet">
+        <div class="col-sm-2" style="padding: 2px 0px" *ngFor="let e of enemies">
+            <div class="col-sm-12">{{e.name}}</div>
+            <div class="col-sm-12">HP {{e.stats.currentHp}} / {{e.stats.maxHp}}</div>
+            <div class="col-sm-12">{{ statusMessage(e) }}</div>
         </div>
     </div>
     `
@@ -27,15 +21,11 @@ export class EnemyComponent implements OnInit {
     constructor(private gameService: GameService) {}
 
         enemies: Enemy[] = new Defaults().EMPTY_GAME.currentEncounter.enemies;
-        private intialLines: number[] = [0, 1, 2, 3, 4, 5];
-        additionalLines: number[] = this.intialLines;
 
         ngOnInit() {
             this.gameService.getData1().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
                     this.enemies = gs.currentEncounter.enemies;
-                    const lines = 5 - this.enemies.length;
-                    this.additionalLines = this.intialLines.filter(i => lines > i);
                 }
             });
         }
