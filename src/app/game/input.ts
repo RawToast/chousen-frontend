@@ -24,7 +24,7 @@ import { Location } from '@angular/common';
         </button>
         <div *ngIf="a.request.length > 1" class="dropdown-menu" style="background-color: #1F1F1F;"
         attr.aria-labelledby="{{a.name}}" >
-            <a class="dropdown-item" style="white-space: normal; background-color: #202020;"
+            <a class="dropdown-item c-dropdown" style="white-space: normal; background-color: #202020;"
             *ngFor="let t of a.request" (click)="actionReq(a.uri, t)">
                  {{ t.description }}
             </a>
