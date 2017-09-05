@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GameService } from './game.service';
 import { Defaults } from './defaults';
 import { Message, Action } from './gameresponse';
@@ -10,23 +10,27 @@ import { Location } from '@angular/common';
     template: `
     <div class="btn-group" role="group" *ngFor="let a of actions">
         <button *ngIf="a.request.length === 1" (click)="actionReq(a.uri, a.request[0])"
-              class="btn btn-blk btn-default"> {{ a.name }} </button>
+             type="button"
+              data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
+              class="btn btn-secondary"> {{ a.name }} </button>
 
-        <button *ngIf="a.request.length > 1" type="button" class="btn btn-default btn-camp2 dropdown-toggle"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="{{ a.description }}">
-            {{ a.name }}
-            <span class="caret"></span>
+        <!-- Multi target -->
+        <button *ngIf="a.request.length > 1" title="{{ a.description }}" type="button"
+            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+            data-placement="top" title="{{ a.description }}"
+            aria-haspopup="true" aria-expanded="false" id="{{a.name}}">
+                {{ a.name }}
+                <span class="caret"></span>
         </button>
-        <ul *ngIf="a.request.length > 1" class="dropdown-menu">
-            <li *ngFor="let t of a.request" (click)="actionReq(a.uri, t)">
-                <a> {{ t.description }} </a>
-            </li>
-        </ul>
+        <div *ngIf="a.request.length > 1" class="dropdown-menu" attr.aria-labelledby="{{a.name}}">
+            <a class="dropdown-item" style="white-space: normal"
+            *ngFor="let t of a.request" (click)="actionReq(a.uri, t)">
+                 {{ t.description }}
+            </a>
+        </div>
     </div>
         `
 })
-// <button *ngFor="let a of actions" (click)="actionReq(a.uri, a.request[0])"
-//          class="btn btn-blk btn-default"> {{ a.name }} </button>
 
 export class InputComponent implements OnInit {
     constructor(private gameService: GameService, private route: ActivatedRoute,

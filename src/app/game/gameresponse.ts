@@ -55,6 +55,7 @@ export interface Player {
 export interface Card {
     name: string;
     description: string;
+    id: string;
     charges?: string;
     playable: boolean;
     action: Action;

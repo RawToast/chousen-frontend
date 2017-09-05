@@ -47,6 +47,7 @@ export class Defaults {
                 {
                     'name': 'Quick Attack',
                     'description': 'Attack with reduced movement penalty',
+                    'id' : '0',
                     'charges': '(4/4)',
                     'playable': true,
                     'action': {
@@ -60,6 +61,7 @@ export class Defaults {
                     'name': 'Essence of Dexterity ',
                     'description': 'Immediately increases Dexterity, only 1 essence may be played per turn',
                     'playable': true,
+                    'id' : '1',
                     'action': {
                         'name': 'Essence of Dexterity ',
                         'description': 'Immediately increases Dexterity, only 1 essence may be played per turn',

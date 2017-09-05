@@ -7,7 +7,7 @@ import { Defaults } from './defaults';
     selector: 'chousen-messages',
     template: `
     <div id="gameMessagesRow" class="row" style="padding: 8px 0px">
-        <div id="gameMessagesOffSet" class="col-xs-10">
+        <div id="gameMessagesOffSet" class="col-sm-10">
             <textarea id="gameMessagesText" class="form-control noresize" style="resize: none" rows="15" data-role="none">
 {{getMessages()}}
             </textarea>

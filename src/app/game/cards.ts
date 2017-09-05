@@ -12,24 +12,38 @@ import { Location } from '@angular/common';
         <div class="btn-group" role="group" *ngFor="let a of hand">
             <!-- Single target -->
             <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
+            data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
                 class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
 
             <!-- Multi target -->
-            <button *ngIf="a.action.request.length > 1" type="button" class="btn btn-default btn-camp2 dropdown-toggle"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="{{ a.description }}">
+            <button *ngIf="a.action.request.length > 1" title="{{ a.description }}" type="button"
+            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" id="{{a.id}}">
                 {{ a.name }} {{ a.charges }}
                 <span class="caret"></span>
             </button>
-            <ul *ngIf="a.action.request.length > 1" class="dropdown-menu">
-                <li *ngFor="let t of a.action.request" (click)="actionReq(a.action.uri, t)">
-                    <a> {{ t.description }} </a>
-                </li>
-            </ul>
+            <div *ngIf="a.action.request.length > 1" class="dropdown-menu" attr.aria-labelledby="{{a.id}}">
+                <a class="dropdown-item" style="white-space: normal"
+                *ngFor="let t of a.action.request" (click)="actionReq(a.action.uri, t)">
+                     {{ t.description }}
+                </a>
+            </div>
         </div>
     </div>
     `
 })
 
+
+// <div class="btn-group open">
+// <button class="btn dropdown-toggle" type="button" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//   Dropdown
+// </button>
+// <div class="dropdown-menu" aria-labelledby="buttonMenu1">
+//   <a class="dropdown-item" href="#">Action</a>
+//   <a class="dropdown-item" href="#">Another action</a>
+//   <a class="dropdown-item" href="#">Something else here</a>
+// </div>
+// </div>
 
 export class CardsComponent implements OnInit {
     constructor(private gameService: GameService, private route: ActivatedRoute,

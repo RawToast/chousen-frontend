@@ -23,13 +23,13 @@ export class EquipmentComponent implements OnInit {
     }
 
     weapon() {
-        if (typeof this.equipment.weapon === 'undefined') {
+        if (typeof this.equipment.weapon === 'undefined' || this.equipment.weapon.name !== 'null') {
             return '';
         } else { return 'Weapon: ' + this.equipment.weapon.name; }
     }
 
     armour() {
-        if (typeof this.equipment.armour === 'undefined') {
+        if (typeof this.equipment.armour === 'undefined' || this.equipment.weapon.name !== 'null') {
             return '';
         } else { return 'Armour: ' + this.equipment.armour.name; }
     }
