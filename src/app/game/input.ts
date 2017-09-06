@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GameService } from './game.service';
 import { Defaults } from './defaults';
-import { Message, Action } from './gameresponse';
+import { Action } from './gameresponse';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 

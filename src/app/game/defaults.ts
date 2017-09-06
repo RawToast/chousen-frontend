@@ -115,9 +115,7 @@ export class Defaults {
             }
         ],
         'messages': [
-            {
-                'text': 'the game has not loaded'
-            }
+            'the game has not loaded'
         ]
     };
 

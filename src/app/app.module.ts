@@ -17,6 +17,7 @@ import { EnemyComponent } from './game/enemy';
 import { MessagesComponent } from './game/messages';
 import { InputComponent } from './game/input';
 import { CardsComponent } from './game/cards';
+import { GameResponse } from './game/gameresponse';
 
 @NgModule({
   declarations: [

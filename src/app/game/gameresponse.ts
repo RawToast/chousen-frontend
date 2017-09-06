@@ -111,15 +111,11 @@ export interface Action {
     request: Request[];
 }
 
-export interface Message {
-    text: string;
-}
-
 export class GameResponse {
     uuid: string;
     player: Player;
     cards: Cards;
     currentEncounter: CurrentEncounter;
     actions: Action[];
-    messages: Message[];
+    messages: string[];
 }
