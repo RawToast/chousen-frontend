@@ -1,0 +1,46 @@
+<h6 (click)="toggleGuide()">Guide</h6>
+
+<div id="notes" class="c-notes" *ngIf="showGuide">
+    
+    <div class="pre-scrollable">
+        <pre class="c-messages">
+    Chousen is a hybrid of a card game and a turn-based dungeon crawler.
+    
+    Class Choice
+    =============
+
+    The player's class determines their starting stats and their deck. Each deck 
+    has 60 cards and when exhausted the deck will be shuffled and reset.
+
+    Fighter
+    Strength deck with a mixture of strength based abilities.
+
+    Berserker
+    Strength deck, based on using basic attack and quaffing potions.
+
+    Chieftain
+    Strength/Vitality deck using damage over time and defensive abilities.
+
+    Rogue
+    Dexterity deck with a mixture of dexterity based abilities.
+
+    Trickster
+    Dexterity/Intelligence deck using percentage damage abilities.
+
+    Mage
+    Intelligence deck using Fire/Burn abilities.
+
+    Wizard
+    Intelligence deck with a mixture of intelligence based ability cards.
+
+
+    Campfires
+    =========
+
+    Throughout the dungeon the player will find a number of campfires. These
+    should be used as places to rest and refresh their hand.
+
+    At a campfire the player may Rest or choose to draw additional cards.
+
+    </pre>
+</div>

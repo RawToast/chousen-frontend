@@ -4,7 +4,9 @@ import { Component, OnInit } from '@angular/core';
     selector: 'chousen-landing',
     template: `
         <chousen-create></chousen-create>
-
+        <br>
+        <chousen-guide></chousen-guide>
+        <br>
         <chousen-notes></chousen-notes>
     `
 })

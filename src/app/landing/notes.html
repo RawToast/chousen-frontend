@@ -1,6 +1,7 @@
-<div id="notes" class="c-notes">
-    <h6>Patch notes </h6>
+<h6 (click)="toggleNotes()">Patch Notes</h6>
 
+<div id="notes" class="c-notes" *ngIf="showNotes">
+    
     <div class="pre-scrollable">
         <pre class="c-messages">
     v0.5.0 Snappyness (6 Sep 2017)

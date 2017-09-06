@@ -18,12 +18,14 @@ import { MessagesComponent } from './game/messages';
 import { InputComponent } from './game/input';
 import { CardsComponent } from './game/cards';
 import { GameResponse } from './game/gameresponse';
+import { GuideComponent } from './landing/guide';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateGameComponent,
     PatchNotesComponent,
+    GuideComponent,
     LandingComponent,
 
     GameComponent,

@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class PatchNotesComponent implements OnInit {
     constructor() { }
+    showNotes = false;
+
 
     ngOnInit() { }
+
+    toggleNotes() {
+        this.showNotes = !this.showNotes;
+    }
 }

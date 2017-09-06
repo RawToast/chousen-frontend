@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
     template: `<input id ="namebox" type="text" class="form-control" placeholder="Character Name" (keyup)="onKey($event)">
                 <br>
                 <fieldset>
-                    <input class="radio" type="radio" name="charc" value="1" (click)="classChoice(1)" checked> Fighter
-                    <input class="radio" type="radio" name="charc" value="2" (click)="classChoice(2)"> Berserker
-                    <input type="radio" name="charc" value="3" (click)="classChoice(3)"> Chieftain
+                    <input type="radio" name="charc" value="2" (click)="classChoice(1)" checked> Fighter
+                    <input type="radio" name="charc" value="3" (click)="classChoice(2)"> Berserker
+                    <input type="radio" name="charc" value="4" (click)="classChoice(3)"> Chieftain
                     <input type="radio" name="charc" value="4" (click)="classChoice(4)"> Rogue
                     <input type="radio" name="charc" value="5" (click)="classChoice(5)"> Trickster
                     <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Mage
