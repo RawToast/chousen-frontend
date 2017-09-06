@@ -78,6 +78,8 @@ export interface EquippedCards { }
 
 export interface Cards {
     hand: Card[];
+    discard?: any[];
+    deck?: any[];
     equippedCards: EquippedCards;
 }
 

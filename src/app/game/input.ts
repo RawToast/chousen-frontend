@@ -54,12 +54,10 @@ export class InputComponent implements OnInit {
         }
 
     actionReq(uri: string, req: Action) {
-        this.gameService.makeRequest(uri, req)
-            .then(gr => this.gameService.refresh2(this.gameId));
+        this.gameService.makeRequest(uri, req);
     }
 
     block() {
-        this.gameService.makeRequest(`game/${this.gameId}/block`, {})
-            .then(gr => this.gameService.refresh2(this.gameId));
+        this.gameService.makeRequest(`game/${this.gameId}/block`, {});
     }
 }

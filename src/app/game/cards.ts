@@ -31,26 +31,21 @@ import { Location } from '@angular/common';
             </div>
         </div>
     </div>
+    <div class="btn-group" role="group" *ngFor="let a of essences">
+    <!-- Single target -->
+    <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
+    data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
+        class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
+    </div>
     `
 })
-
-
-// <div class="btn-group open">
-// <button class="btn dropdown-toggle" type="button" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//   Dropdown
-// </button>
-// <div class="dropdown-menu" aria-labelledby="buttonMenu1">
-//   <a class="dropdown-item" href="#">Action</a>
-//   <a class="dropdown-item" href="#">Another action</a>
-//   <a class="dropdown-item" href="#">Something else here</a>
-// </div>
-// </div>
 
 export class CardsComponent implements OnInit {
     constructor(private gameService: GameService, private route: ActivatedRoute,
         private location: Location) { }
 
         hand: Card[] = new Defaults().EMPTY_GAME.cards.hand;
+        essences: Card[] = [];
 
         gameId = '';
 
@@ -61,18 +56,17 @@ export class CardsComponent implements OnInit {
             });
             this.gameService.getData1().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
-                    this.hand = gs.cards.hand;
+                    this.hand = gs.cards.hand.filter(c => !c.name.includes('Essence'));
+                    this.essences = gs.cards.hand.filter(c => c.name.includes('Essence'));
                 }
             });
         }
 
     actionReq(uri: string, req: Action) {
-        this.gameService.makeRequest(uri, req)
-            .then(gr => this.gameService.refresh2(this.gameId));
+        this.gameService.makeRequest(uri, req);
     }
 
     block() {
-        this.gameService.makeRequest(`game/${this.gameId}/block`, {})
-            .then(gr => this.gameService.refresh2(this.gameId));
+        this.gameService.makeRequest(`game/${this.gameId}/block`, {});
     }
 }

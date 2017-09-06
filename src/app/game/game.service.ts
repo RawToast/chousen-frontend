@@ -39,10 +39,8 @@ export class GameService {
             this.fetching = false;
             const result = data.json() as GameResponse;
             this.data2.next(result);
-        }).catch(err => {
-            this.fetching = false;
-            this.data2.error(err);
-        });
+        }).catch(this.handleError);
+
         return this.data2;
     }
 
@@ -81,15 +79,16 @@ export class GameService {
           .toPromise()
           .then(response => {
             const result = response.json() as GameResponse;
+            this.data2.next(result);
             return result;
         } )
           .catch(this.handleError);
     }
 
-
-
     private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
+      this.fetching = false;
+      this.data2.error(error);
       return Promise.reject(error.message || error);
     }
 }

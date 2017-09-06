@@ -6,8 +6,8 @@ import { Defaults } from './defaults';
 @Component({
     selector: 'chousen-equipment',
     template: `<div class="row col-sm-12">
-                <div *ngIf="equipment.weapon !== null" class="col-sm-3">{{ weapon() }}</div>
-                <div class="col-sm-4">{{ armour() }}</div>
+                    <div *ngIf="equipment.weapon !== null" class="col-sm-3">{{ weapon() }}</div>
+                    <div class="col-sm-4">{{ armour() }}</div>
             </div>`
 })
 
