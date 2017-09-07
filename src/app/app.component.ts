@@ -12,6 +12,6 @@ export class AppComponent {
   title = 'app';
 
   goHome() {
-    this.router.navigateByUrl('/game');
+    this.router.navigateByUrl('/');
   }
 }

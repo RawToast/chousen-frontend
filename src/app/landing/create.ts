@@ -30,7 +30,7 @@ export class CreateGameComponent implements OnInit {
 
             this.gameService.create(event.target.value, this.class)
                 .then(gr => {
-                this.router.navigate(['game', gr.uuid]);
+                this.router.navigate([gr.uuid]);
             });
         }
     }

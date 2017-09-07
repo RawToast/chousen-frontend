@@ -67,6 +67,8 @@ export class GameService {
           .toPromise()
           .then(response => {
             const result = response.json() as GameResponse;
+            // tslint:disable-next-line:no-trailing-whitespace
+            this.data2.next(result);            
             return result;
         } )
           .catch(this.handleError);
