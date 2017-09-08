@@ -1,6 +1,6 @@
 
-// const URI = 'http://localhost:8080';
-const URI = 'https://chousen-be-test.herokuapp.com';
+const URI = 'http://localhost:8080';
+// const URI = 'https://chousen-be-test.herokuapp.com';
 
 
 
