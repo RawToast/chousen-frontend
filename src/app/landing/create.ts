@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
                     <input type="radio" name="charc" value="5" (click)="classChoice(5)"> Trickster
                     <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Mage
                     <input type="radio" name="charc" value="7" (click)="classChoice(7)"> Wizard
+                    <input type="radio" name="charc" value="8" (click)="classChoice(8)"> Alchemist
                 </fieldset>`,
 })
 

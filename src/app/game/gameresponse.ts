@@ -48,6 +48,7 @@ export interface Player {
     stats: Stats;
     experience: Experience;
     equipment: Equipment;
+    gold: number;
     position: number;
     status: Status[];
 }

@@ -32,6 +32,7 @@ export class Defaults {
                 },
                 'armour': null
             },
+            'gold' : 10,
             'position': 120,
             'status': [
                 {
