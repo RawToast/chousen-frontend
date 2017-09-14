@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
         <chousen-create></chousen-create>
         <br>
         <chousen-guide></chousen-guide>
-        <br>
         <chousen-notes></chousen-notes>
     `
 })

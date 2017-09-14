@@ -48,3 +48,7 @@ h6 {
 .hpwarn {
     color: #009000;
 }
+
+input[type="radio"] {
+    position: relative !important;
+}
