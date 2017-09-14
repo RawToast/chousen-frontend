@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'chousen-create',
-    template: `<input id ="namebox" type="text" class="form-control" placeholder="Character Name" (keyup)="onKey($event)">
-                <br>
-                <fieldset>
+    template: `<div class="mui-textfield">
+                    <input id ="namebox" type="text" class="form-control" placeholder="Character Name" (keyup)="onKey($event)">
+                </div>
+                <div class="mui-radio">
                     <input type="radio" name="charc" value="2" (click)="classChoice(1)" checked> Fighter
                     <input type="radio" name="charc" value="3" (click)="classChoice(2)"> Berserker
                     <input type="radio" name="charc" value="4" (click)="classChoice(3)"> Chieftain
@@ -16,7 +17,7 @@ import { Router } from '@angular/router';
                     <input type="radio" name="charc" value="6" (click)="classChoice(6)"> Mage
                     <input type="radio" name="charc" value="7" (click)="classChoice(7)"> Wizard
                     <input type="radio" name="charc" value="8" (click)="classChoice(8)"> Alchemist
-                </fieldset>`,
+                </div>`,
 })
 
 export class CreateGameComponent implements OnInit {

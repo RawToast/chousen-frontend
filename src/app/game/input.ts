@@ -9,28 +9,23 @@ import { Location } from '@angular/common';
     selector: 'chousen-input',
     template: `
     <div class="btn-group" role="group" *ngFor="let a of actions">
+
         <button *ngIf="a.request.length === 1" (click)="actionReq(a.uri, a.request[0])"
-             type="button"
-              data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
-              class="btn btn-secondary"> {{ a.name }} </button>
+            data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
+            class="mui-btn mui-btn--flat mui-btn--primary"> {{ a.name }} </button>
 
         <!-- Multi target -->
-        <button *ngIf="a.request.length > 1" title="{{ a.description }}" type="button"
-            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-            data-placement="top" title="{{ a.description }}"
-            aria-haspopup="true" aria-expanded="false" id="{{a.name}}">
+        <div *ngIf="a.request.length > 1" title="{{ a.description }}" class="mui-dropdown">
+            <button class="mui-btn mui-btn--flat mui-btn--primary" data-mui-toggle="dropdown">
                 {{ a.name }}
-                <span class="caret"></span>
-        </button>
-        <div *ngIf="a.request.length > 1" class="dropdown-menu" style="background-color: #1F1F1F;"
-        attr.aria-labelledby="{{a.name}}" >
-            <a class="dropdown-item c-dropdown" style="white-space: normal; background-color: #202020;"
-            *ngFor="let t of a.request" (click)="actionReq(a.uri, t)">
-                 {{ t.description }}
-            </a>
+                <span class="mui-caret"></span>
+            </button>
+            <ul *ngIf="a.request.length > 1" class="mui-dropdown__menu" style="background-color: #1F1F1F">
+                <li *ngFor="let t of a.request"><a (click)="actionReq(a.uri, t)">{{ t.description }}</a></li>
+            </ul>
         </div>
     </div>
-        `
+    `
 })
 
 export class InputComponent implements OnInit {

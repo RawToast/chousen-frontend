@@ -26,17 +26,19 @@ import { Location } from '@angular/common';
                 </ul>
           </div>
 
-          <button *ngIf="a.action.request.length === 0" 
+          <button *ngIf="a.action.request.length === 0"
           data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
           class="mui-btn mui-btn--flat mui-btn--primary" disabled> {{ a.name }} {{ a.charges }}</button>
         </div>
     </div>
+    <!-- Essences -->
     <div class="btn-group" role="group" *ngFor="let a of essences">
-    <!-- Single target -->
     <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
-    data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
-        class="mui-btn" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
+        data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
+        class="mui-btn mui-btn--flat mui-btn--primary" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
+
     </div>
+
     `
 })
 
