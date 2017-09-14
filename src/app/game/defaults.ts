@@ -77,9 +77,29 @@ export class Defaults {
                 },
             ],
             'equippedCards': {
-                'weapon': null,
-                'armour': null,
-                'jewelery': null
+                'skills': [
+                    {
+                        'name': 'Barrier',
+                        'description': 'Creates a magic barrier to protect the user',
+                        'id': 'd6857897-ddbe-4134-99dc-095c6f21d3e5',
+                        'charges': '(3/5)',
+                        'playable': true,
+                        'action': {
+                            'name': 'Barrier',
+                            'description': 'Creates a magic barrier to protect the user',
+                            'uri': 'game/ff56d7d5-cf80-4bec-8867-48974907c688/self/d6857897-ddbe-4134-99dc-095c6f21d3e5',
+                            'request': [
+                                {
+                                    'description': 'Barrier',
+                                    'action': 'Barrier'
+                                }
+                            ]
+                        }
+                    }
+                ]
+                // 'weapon': null,
+                // 'armour': null,
+                // 'jewelery': null
             }
         },
         'currentEncounter': {

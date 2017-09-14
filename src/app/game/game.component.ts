@@ -19,6 +19,8 @@ import { Defaults } from './defaults';
 
     <chousen-input></chousen-input>
 
+    <chousen-skills></chousen-skills>
+
     <chousen-cards></chousen-cards>
     `,
     styleUrls: ['./game.component.css']

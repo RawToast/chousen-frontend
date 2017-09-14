@@ -75,7 +75,9 @@ export interface Passive {
     playable: boolean;
 }
 
-export interface EquippedCards { }
+export interface EquippedCards {
+    skills?: Card[];
+}
 
 export interface Cards {
     hand: Card[];

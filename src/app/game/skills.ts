@@ -6,10 +6,10 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-    selector: 'chousen-cards',
+    selector: 'chousen-skills',
     template: `
     <div>
-        <div class="btn-group" role="group" *ngFor="let a of hand">
+        <div class="btn-group" role="group" *ngFor="let a of skills">
             <!-- Single target -->
             <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
             data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
@@ -31,21 +31,14 @@ import { Location } from '@angular/common';
             </div>
         </div>
     </div>
-    <div class="btn-group" role="group" *ngFor="let a of essences">
-    <!-- Single target -->
-    <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
-    data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
-        class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
-    </div>
     `
 })
 
-export class CardsComponent implements OnInit {
+export class SkillsComponent implements OnInit {
     constructor(private gameService: GameService, private route: ActivatedRoute,
         private location: Location) { }
 
-        hand: Card[] = new Defaults().EMPTY_GAME.cards.hand;
-        essences: Card[] = [];
+        skills: Card[] = [];
 
         gameId = '';
 
@@ -55,18 +48,15 @@ export class CardsComponent implements OnInit {
                 this.gameId = gid;
             });
             this.gameService.getData1().subscribe(gs => {
-                if (typeof gs !== 'undefined') {
-                    this.hand = gs.cards.hand.filter(c => !c.name.includes('Essence of'));
-                    this.essences = gs.cards.hand.filter(c => c.name.includes('Essence of'));
+                if (typeof gs !== 'undefined' && typeof gs.cards.equippedCards.skills !== 'undefined') {
+                    this.skills = gs.cards.equippedCards.skills;
+                } else {
+                    this.skills = [];
                 }
             });
         }
 
     actionReq(uri: string, req: Action) {
         this.gameService.makeRequest(uri, req);
-    }
-
-    block() {
-        this.gameService.makeRequest(`game/${this.gameId}/block`, {});
     }
 }
