@@ -18,7 +18,7 @@ import { Location } from '@angular/common';
             <!-- Multi target -->
             <div *ngIf="a.action.request.length > 1" title="{{ a.description }}" class="mui-dropdown">
                 <button class="mui-btn mui-btn--flat mui-btn--primary" data-mui-toggle="dropdown">
-                    {{ a.name }}
+                {{ a.name }} {{ a.charges }}
                     <span class="mui-caret"></span>
                 </button>
                 <ul *ngIf="a.action.request.length > 1" class="mui-dropdown__menu" style="background-color: #1F1F1F">
