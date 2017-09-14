@@ -13,29 +13,29 @@ import { Location } from '@angular/common';
             <!-- Single target -->
             <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
             data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
-                class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
+            class="mui-btn mui-btn--flat mui-btn--primary" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
 
             <!-- Multi target -->
-            <button *ngIf="a.action.request.length > 1" title="{{ a.description }}" type="button"
-            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" id="{{a.id}}">
-                {{ a.name }} {{ a.charges }}
-                <span class="caret"></span>
-            </button>
-            <div *ngIf="a.action.request.length > 1" class="dropdown-menu" style="background-color: #1F1F1F"
-                attr.aria-labelledby="{{a.id}}">
-                <a class="dropdown-item c-dropdown" style="white-space: normal; background-color: #202020"
-                *ngFor="let t of a.action.request" (click)="actionReq(a.action.uri, t)">
-                     {{ t.description }}
-                </a>
-            </div>
+            <div *ngIf="a.action.request.length > 1" title="{{ a.description }}" class="mui-dropdown">
+                <button class="mui-btn mui-btn--flat mui-btn--primary" data-mui-toggle="dropdown">
+                    {{ a.name }}
+                    <span class="mui-caret"></span>
+                </button>
+                <ul *ngIf="a.action.request.length > 1" class="mui-dropdown__menu" style="background-color: #1F1F1F">
+                    <li *ngFor="let t of a.action.request"><a (click)="actionReq(a.action.uri, t)">{{ t.description }}</a></li>
+                </ul>
+          </div>
+
+          <button *ngIf="a.action.request.length === 0" 
+          data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
+          class="mui-btn mui-btn--flat mui-btn--primary" disabled> {{ a.name }} {{ a.charges }}</button>
         </div>
     </div>
     <div class="btn-group" role="group" *ngFor="let a of essences">
     <!-- Single target -->
     <button *ngIf="a.action.request.length === 1" (click)="actionReq(a.action.uri, a.action.request[0])"
     data-toggle="tooltip" data-placement="top" title="{{ a.description }}"
-        class="btn btn-blk btn-default" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
+        class="mui-btn" [disabled]=!a.playable> {{ a.name }} {{ a.charges }}</button>
     </div>
     `
 })

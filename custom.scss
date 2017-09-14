@@ -1,0 +1,12 @@
+// import MUI colors
+@import "bower_components/mui/src/sass/mui/colors";
+
+// customize MUI variables
+$mui-primary-color:       #006700;
+$mui-primary-color-dark:  #002A00;
+$mui-primary-color-light: #00E500;
+
+$mui-btn-flat-bg-color-hover: #202020;
+
+// import MUI SASS
+@import "bower_components/mui/src/sass/mui";
