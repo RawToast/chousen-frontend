@@ -23,7 +23,7 @@ export class EnemyComponent implements OnInit {
         enemies: Enemy[] = new Defaults().EMPTY_GAME.currentEncounter.enemies;
 
         ngOnInit() {
-            this.gameService.getData1().subscribe(gs => {
+            this.gameService.getData().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
                     this.enemies = gs.currentEncounter.enemies.sort((a, b) => a.id.localeCompare(b.id));
                 }

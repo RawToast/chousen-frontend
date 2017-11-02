@@ -46,7 +46,7 @@ export class InputComponent implements OnInit {
                 const gid = params['id'];
                 this.gameId = gid;
             });
-            this.gameService.getData1().subscribe(gs => {
+            this.gameService.getData().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
                     this.actions = gs.actions;
                 }

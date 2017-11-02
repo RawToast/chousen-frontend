@@ -13,52 +13,12 @@ import * as Config from '../config';
 export class GameService {
 
     constructor(private http: Http) { }
-    // 88107f56-54c4-4e0d-8e1c-41532b0848be
     private rootApiUrl = Config.chousenUri();  // URL to web api
 
     private headers = new Headers({'Content-Type': 'application/json'});
     private fetching: boolean;
 
-    // private data1 = new Subject<GameResponse>();
-    private data2 = new BehaviorSubject<GameResponse>(undefined);
-
-    awaitData(id: string): Observable<GameResponse> {
-        console.log('Awaiting ' + id);
-
-        if ((typeof this.data2.getValue() === 'undefined') && !this.fetching) {
-            this.refresh2(id);
-        }
-        return this.getData1();
-    }
-
-    refresh2(id: string) {
-        console.log('Refreshing ' + id);
-        const url = `${this.rootApiUrl}/game/${id}`;
-
-        this.http.get(url).toPromise().then(data => {
-            this.fetching = false;
-            const result = data.json() as GameResponse;
-            this.data2.next(result);
-        }).catch(this.handleError);
-
-        return this.data2;
-    }
-
-    getData1(): Observable<GameResponse> {
-        return this.data2.asObservable();
-    }
-
-
-    getGame(id: string): Promise<GameResponse> {
-        const url = `${this.rootApiUrl}/game/${id}`;
-        return this.http.get(url)
-          .toPromise()
-          .then(response => {
-            const result = response.json() as GameResponse;
-            return result;
-        } )
-          .catch(this.handleError);
-    }
+    private gameResponse = new BehaviorSubject<GameResponse>(undefined);
 
     create(name: string, choice: number): Promise<GameResponse> {
         const url = `${this.rootApiUrl}/game/${name}/start/${choice}`;
@@ -68,7 +28,7 @@ export class GameService {
           .then(response => {
             const result = response.json() as GameResponse;
             // tslint:disable-next-line:no-trailing-whitespace
-            this.data2.next(result);            
+            this.gameResponse.next(result);            
             return result;
         } )
           .catch(this.handleError);
@@ -81,16 +41,42 @@ export class GameService {
           .toPromise()
           .then(response => {
             const result = response.json() as GameResponse;
-            this.data2.next(result);
+            this.gameResponse.next(result);
             return result;
         } )
           .catch(this.handleError);
     }
 
+    awaitData(id: string): Observable<GameResponse> {
+        // console.log('Awaiting ' + id);
+
+        if ((typeof this.gameResponse.getValue() === 'undefined') && !this.fetching) {
+            this.refresh(id);
+        }
+        return this.getData();
+    }
+
+    refresh(id: string) {
+        // console.log('Refreshing ' + id);
+        const url = `${this.rootApiUrl}/game/${id}`;
+
+        this.http.get(url).toPromise().then(data => {
+            this.fetching = false;
+            const result = data.json() as GameResponse;
+            this.gameResponse.next(result);
+        }).catch(this.handleError);
+
+        return this.gameResponse;
+    }
+
+    getData(): Observable<GameResponse> {
+        return this.gameResponse.asObservable();
+    }
+
     private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
       this.fetching = false;
-      this.data2.error(error);
+      this.gameResponse.error(error);
       return Promise.reject(error.message || error);
     }
 }

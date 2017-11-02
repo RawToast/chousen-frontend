@@ -54,7 +54,7 @@ export class CardsComponent implements OnInit {
                 const gid = params['id'];
                 this.gameId = gid;
             });
-            this.gameService.getData1().subscribe(gs => {
+            this.gameService.getData().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
                     this.hand = gs.cards.hand.filter(c => !c.name.includes('Essence of'));
                     this.essences = gs.cards.hand.filter(c => c.name.includes('Essence of'));

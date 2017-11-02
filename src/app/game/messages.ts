@@ -20,7 +20,7 @@ export class MessagesComponent implements OnInit {
     messages: string[] = new Defaults().EMPTY_GAME.messages;
 
     ngOnInit() {
-        this.gameService.getData1().subscribe(gs => {
+        this.gameService.getData().subscribe(gs => {
             if (typeof gs !== 'undefined') {
                 this.messages = gs.messages;
             }

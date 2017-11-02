@@ -47,7 +47,7 @@ export class SkillsComponent implements OnInit {
                 const gid = params['id'];
                 this.gameId = gid;
             });
-            this.gameService.getData1().subscribe(gs => {
+            this.gameService.getData().subscribe(gs => {
                 if (typeof gs !== 'undefined' && typeof gs.cards.equippedCards.skills !== 'undefined') {
                     this.skills = gs.cards.equippedCards.skills;
                 } else {

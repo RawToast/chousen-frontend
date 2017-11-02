@@ -37,7 +37,7 @@ export class GameComponent implements OnInit {
         this.route.params.subscribe((params: ParamMap) => {
             const gid = params['id'];
             this.gameService.awaitData(gid);
-            this.gameService.getData1().subscribe(gs => {
+            this.gameService.getData().subscribe(gs => {
                 if (typeof gs !== 'undefined') {
                     this.game = gs;
                 }

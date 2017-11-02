@@ -18,7 +18,7 @@ export class EquipmentComponent implements OnInit {
     equipment: Equipment = new Defaults().EMPTY_GAME.player.equipment;
 
     ngOnInit() {
-        this.gameService.getData1().subscribe(gs => {
+        this.gameService.getData().subscribe(gs => {
             if (typeof gs !== 'undefined') {
                 this.equipment = gs.player.equipment;
             }

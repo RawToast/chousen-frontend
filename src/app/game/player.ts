@@ -17,7 +17,7 @@ export class PlayerComponent implements OnInit {
     statusMsg: string;
 
     ngOnInit() {
-        this.gameService.getData1().subscribe(gs => {
+        this.gameService.getData().subscribe(gs => {
             if (typeof gs !== 'undefined') {
                 this.player = gs.player;
                 this.updateStatus();
