@@ -1,6 +1,9 @@
 # ChousenFrontend
 
-Improved frontend for [chousen](http://bit.ly/chousen).
+Improved frontend for [chousen-server](https://github.com/rawtoast/chousen-server)
+
+Example instance available on Heroku [chousen](http://bit.ly/chousen), note that due to both the frontend and
+backend being hosted on free Heroku instances initial reponse times will be very slow as the dyno wakes up. 
 
 
 ## Angular CLI
